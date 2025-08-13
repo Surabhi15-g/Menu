@@ -1,0 +1,69 @@
+import math
+
+def swap_variables():
+    a = 5
+    b = 10
+    print(f"Before swapping: a = {a}, b = {b}")
+    a, b = b, a
+    print(f"After swapping: a = {a}, b = {b}")
+
+def identify_data_type():
+    user_input = input("Enter something: ")
+    print("Data type:", type(user_input))
+
+def area_of_circle():
+    radius = float(input("Enter radius: "))
+    area = math.pi * (radius ** 2)
+    print("Area of circle:", area)
+
+def simple_calculator():
+    num1 = float(input("Enter first number: "))
+    num2 = float(input("Enter second number: "))
+    operator = input("Enter operator (+, -, *, /): ")
+
+    if operator == "+":
+        print("Result:", num1 + num2)
+    elif operator == "-":
+        print("Result:", num1 - num2)
+    elif operator == "*":
+        print("Result:", num1 * num2)
+    elif operator == "/":
+        if num2 != 0:
+            print("Result:", num1 / num2)
+        else:
+            print("Error: Division by zero!")
+    else:
+        print("Invalid operator")
+
+def celsius_to_fahrenheit():
+    celsius = float(input("Enter temperature in Celsius: "))
+    fahrenheit = (celsius * 9/5) + 32
+    print(f"{celsius}°C = {fahrenheit}°F")
+
+# Menu
+while True:
+    print("\n--- Python Challenge Menu ---")
+    print("1. Swap Variables Without Temp Variable")
+    print("2. Identify the Data Type")
+    print("3. Area of a Circle")
+    print("4. Simple Calculator")
+    print("5. Convert Celsius to Fahrenheit")
+    print("6. Exit")
+
+    choice = input("Enter your choice (1-6): ")
+
+    if choice == "1":
+        swap_variables()
+    elif choice == "2":
+        identify_data_type()
+    elif choice == "3":
+        area_of_circle()
+    elif choice == "4":
+        simple_calculator()
+    elif choice == "5":
+        celsius_to_fahrenheit()
+    elif choice == "6":
+        print("Exiting... Goodbye!")
+        break
+    else:
+        print("Invalid choice! Please enter 1-6.")
